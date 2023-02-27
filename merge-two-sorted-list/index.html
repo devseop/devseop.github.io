@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.6.1"/><meta data-react-helmet="true" name="description" content="테오의 스프린트는 시니어 프론트엔드 개발자 테오(teo)가 진행하는 프로젝트로 참여자끼리 팀을 구성하여 구글의 스프린트를 체험해보는 과정에 대한 회고입니다."/><meta data-react-helmet="true" name="viewport" content="width=device-width, initial-scale=1.0"/><meta data-react-helmet="true" http-equiv="Content-Type" content="text/html;charset=UTF-8"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" property="og:title" content="단일 연결 리스트 합치기"/><meta data-react-helmet="true" property="og:description" content="테오의 스프린트는 시니어 프론트엔드 개발자 테오(teo)가 진행하는 프로젝트로 참여자끼리 팀을 구성하여 구글의 스프린트를 체험해보는 과정에 대한 회고입니다."/><meta data-react-helmet="true" property="og:image" content="/static/d6cfe83f21703e7663ce00f5589af0a1/algo1.png"/><meta data-react-helmet="true" property="og:url"/><meta data-react-helmet="true" property="og:site_name" content="단일 연결 리스트 합치기"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:title" content="단일 연결 리스트 합치기"/><meta data-react-helmet="true" name="twitter:description" content="테오의 스프린트는 시니어 프론트엔드 개발자 테오(teo)가 진행하는 프로젝트로 참여자끼리 팀을 구성하여 구글의 스프린트를 체험해보는 과정에 대한 회고입니다."/><meta data-react-helmet="true" name="twitter:image" content="/static/d6cfe83f21703e7663ce00f5589af0a1/algo1.png"/><meta data-react-helmet="true" name="twitter:site" content="@사용자이름"/><meta data-react-helmet="true" name="twitter:creator" content="@사용자이름"/><style data-href="/styles.9e907bc32054b7771552.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><link rel="canonical" href="https://devseop.github.io/merge-two-sorted-list/" data-baseprotocol="https:" data-basehost="devseop.github.io"/><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><title data-react-helmet="true">단일 연결 리스트 합치기</title><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css zyllbl">.css-zyllbl{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100vh;}</style><main class="css-zyllbl e1strnqo0"><style data-emotion="css-global jbykm5">@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css');*{padding:0;margin:0;box-sizing:border-box;font-family:'Pretendard',san-serif;}html,body,#___gatsby{height:100%;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}</style><style data-emotion="css 1fttcpj">.css-1fttcpj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</style><div class="css-1fttcpj e1opi4mu1"><style data-emotion="css 1fg5ucz">.css-1fg5ucz{width:768px;height:350px;object-fit:cover;margin:80px auto 12px;border-radius:16px;}@media (max-width: 768px){.css-1fg5ucz{height:300px;}}</style><div data-gatsby-image-wrapper="" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-1fg5ucz e1opi4mu0"><div style="max-width:768px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;350&#x27;%20width=&#x27;768&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><img aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear" decoding="async" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABBklEQVR42oVR0W6CQBDk/998rDEaAaEpVUoCGGJbuQRjhDs4HmiLor8y5s6gqKd9mOxmdndudk/LfjPcIv1Jr3K2ZRK3vGpWeyYoxWqKOVkgJJ8y79aeCnYbN9XmjKIp8LWOJfJdfubTKlWKaypnvOHge45iVyBYBgiWPkISIEoisJqhPJTyIfpH75xeORQNK76COTVhfVgwpgZ6Lz0MJgP09T6G9lByo9cRbM8GoQS0pmqHrWDCExjvBnRHhzkzMX4bI4xDOL4Db+FJIcu14EYuCCN3LpUr59tcriuiWF0MxlmMcl+euOZ0jn9XbmMXYkjczv/2L/XqUn/4KY8EW751o6p1BY8rdVwxiYAhhAAAAABJRU5ErkJggg==" alt=""/><picture><source type="image/webp" data-srcset="/static/d6cfe83f21703e7663ce00f5589af0a1/049c7/algo1.webp 192w,/static/d6cfe83f21703e7663ce00f5589af0a1/6f1d3/algo1.webp 384w,/static/d6cfe83f21703e7663ce00f5589af0a1/048dc/algo1.webp 768w" sizes="(min-width: 768px) 768px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 768px) 768px, 100vw" decoding="async" loading="lazy" data-src="/static/d6cfe83f21703e7663ce00f5589af0a1/c4832/algo1.png" data-srcset="/static/d6cfe83f21703e7663ce00f5589af0a1/9e81a/algo1.png 192w,/static/d6cfe83f21703e7663ce00f5589af0a1/b2932/algo1.png 384w,/static/d6cfe83f21703e7663ce00f5589af0a1/c4832/algo1.png 768w" alt="thumbnail"/></picture><noscript><picture><source type="image/webp" srcSet="/static/d6cfe83f21703e7663ce00f5589af0a1/049c7/algo1.webp 192w,/static/d6cfe83f21703e7663ce00f5589af0a1/6f1d3/algo1.webp 384w,/static/d6cfe83f21703e7663ce00f5589af0a1/048dc/algo1.webp 768w" sizes="(min-width: 768px) 768px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 768px) 768px, 100vw" decoding="async" loading="lazy" src="/static/d6cfe83f21703e7663ce00f5589af0a1/c4832/algo1.png" srcSet="/static/d6cfe83f21703e7663ce00f5589af0a1/9e81a/algo1.png 192w,/static/d6cfe83f21703e7663ce00f5589af0a1/b2932/algo1.png 384w,/static/d6cfe83f21703e7663ce00f5589af0a1/c4832/algo1.png 768w" alt="thumbnail"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><style data-emotion="css 19genjy">.css-19genjy{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;margin:0 auto;}@media (max-width: 768px){.css-19genjy{width:100%;padding:40px 20px;}}</style><div class="css-19genjy e1st1jau3"><style data-emotion="css 1pwrdeu">.css-1pwrdeu{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin:24px 0 8px;color:#f24822;font-size:13px;line-height:1;font-weight:500;}</style><div class="css-1pwrdeu e1st1jau1">Algorithm</div><style data-emotion="css 1689wjd">.css-1689wjd{display:-webkit-box;overflow:hidden;overflow-wrap:break-word;text-overflow:ellipsis;white-space:normal;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:36px;font-weight:700;line-height:1.2;margin-bottom:12px;}@media (max-width: 768px){.css-1689wjd{font-size:30px;}}</style><div class="css-1689wjd e1st1jau2">단일 연결 리스트 합치기</div><style data-emotion="css om3ghx">.css-om3ghx{font-size:14px;color:rgba(34, 34, 34, 0.6);}</style><p class="css-om3ghx e1st1jau0">2022.11.15.</p></div></div><style data-emotion="css 18l863y">.css-18l863y{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;margin:0 auto;padding:64px 0;word-break:break-all;line-height:1.5;font-size:17px;font-weight:400;}.css-18l863y p{padding:0;}.css-18l863y h1,.css-18l863y h2,.css-18l863y h3{font-weight:700;margin-bottom:16px;}.css-18l863y *+h1,.css-18l863y *+h2,.css-18l863y *+h3{margin-top:40px;}.css-18l863y hr+h1,.css-18l863y hr+h2,.css-18l863y hr+h3{margin-top:0;}.css-18l863y h1{font-size:32px;}.css-18l863y h2{font-size:24px;}.css-18l863y h3{font-size:20px;}.css-18l863y blockquote{margin:32px 0;padding:20px 32px 20px;border-left:4px solid #4263eb;font-weight:400;background:rgba(34, 34, 34, 0.05);line-height:1.5;}.css-18l863y ol,.css-18l863y ul{margin-left:20px;padding:30px 0;}.css-18l863y hr{border:0.5px solid rgba(34, 34, 34, 0.5);margin:64px 0;}.css-18l863y a{color:#4263eb;-webkit-text-decoration:underline;text-decoration:underline;}.css-18l863y table{margin:24px 0;background-color:rgba(34, 34, 34, 0.05);border:0.5px solid rgba(34, 34, 34, 0.3);font-size:14px;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;min-width:40%;max-width:100%;border-collapse:collapse;box-sizing:inherit;}.css-18l863y th{padding:8px;border-bottom:3px solid rgba(34, 34, 34, 0.3);}.css-18l863y td{padding:8px;}.css-18l863y table td+td,.css-18l863y table th+th{border-left:0.5px solid rgba(34, 34, 34, 0.3);}.css-18l863y pre[class*='language-']{margin:16px 0;padding:16px 20px;font-size:14px;border-radius:10px;}.css-18l863y pre[class*='language-']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);border-radius:3px;}.css-18l863y code[class*='language-'],.css-18l863y pre[class*='language-']{tab-size:2;}.css-18l863y pre>code{font-family:'JetBrains Mono';}.css-18l863y pre>code .token.function{color:#b392f0;}.css-18l863y pre>code .token.keyword,.css-18l863y pre>code .token.operator{color:#f97583;}.css-18l863y pre>code .token.string,.css-18l863y pre>code .token.constant,.css-18l863y pre>code .token.boolean,.css-18l863y pre>code .token.number{color:#9ecbff;}.css-18l863y pre>code .token.parameter{color:#ffab70;}.css-18l863y pre>code .token.literal-property.property{color:#fff;}@media (max-width: 768px){.css-18l863y{width:100%;padding:80px 20px;line-height:1.6;font-size:14px;}.css-18l863y h1{font-size:23px;}.css-18l863y h2{font-size:20px;}.css-18l863y h3{font-size:17px;}.css-18l863y h4{font-size:17px;font-weight:500;}.css-18l863y img{width:100%;}.css-18l863y hr{margin:50px 0;}}</style><article class="css-18l863y e1ijh0y10"><h2>문제</h2>
+<p>두 개의 정렬된 단일 연결 리스트 <code class="language-text">list1</code>과 <code class="language-text">list2</code>가 있습니다.
+각각의 단일 연결 리스트를 하나의 단일 연결 리스트로 병합합니다.
+연결 리스트는 첫 두 개의 노드를 연결해야 하며, 병합된 단일 연결 리스트를 반환해야 합니다.
+</br></p>
+</br>
+<h4>예시 1</h4>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/21365c55225f841c06ab3f7655b37e63/fe486/merge.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 32.29166666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB20lEQVR42h2QXUhTcRyGX9kGKXQXVAZeFcOLLoKEQkXSpKTGTlYqBRFFRLXymLEtz9na53Hnf872P8vRctiHGFIX4YUl7SokL72PGBmsi8TVtuyoIfP8Yr3wXD7w8CLG1Nmooojj2Qw22RQ2EjkQEVbULDYez6DS0IqceAe+G3247j5sT7KYzhJxvvRWwZVMFfdmCPVdTRYw/IqAv/fVhVWv2kaj8yj79XTVrwcoMIuipAvmw9TcNhFQp68uEro1mj4WoW77C4JL2woLvKbtWyAISrHLxSkP8iRctFdyFAMpVCR+2vRpHbXgBEpy6qApG0N/fqzheIXw+s0qACd61drgyah5qD1NOKtvd7q51TOYI7hZtVkwrMvwsaioMDWkBkMHPssa6IGGXwFuq0gcpsQxN/8e09fa0RkjNN4kdGmE2/7C/+pTnODiBBz5in69jP60BWipp0Ym8yQqSt49JE46yp5I46I3ArrLbOZwfPdkWIH8SEZbmJr2+6mBWoGVocguGvA4vp1rgVMie8uI1VS/w21YNnQk6MPREDkLwS8ojarPfnuZQtJzfJeTA+tj/KPWC8cZX775fHrn04Xx0ol1Rvg5xqfKwYn4cpZwka1dEgzK33pJUN/t4B9j7enDek6CEgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/21365c55225f841c06ab3f7655b37e63/a59e9/merge.webp 192w,
+/static/21365c55225f841c06ab3f7655b37e63/0ca9f/merge.webp 384w,
+/static/21365c55225f841c06ab3f7655b37e63/dc9b9/merge.webp 768w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/21365c55225f841c06ab3f7655b37e63/3b721/merge.png 192w,
+/static/21365c55225f841c06ab3f7655b37e63/66595/merge.png 384w,
+/static/21365c55225f841c06ab3f7655b37e63/fe486/merge.png 768w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/21365c55225f841c06ab3f7655b37e63/fe486/merge.png"
+            alt="알고리즘 예시 이미지"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]</code></pre></div>
+<h4>예시 2</h4>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Input: list1 = [], list2 = []
+Output: []</code></pre></div>
+<h4>예시 3</h4>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">Input: list1 = [], list2 = [0]
+Output: [0]</code></pre></div>
+<h4>제약사항</h4>
+<ul>
+<li>연결 리스트의 노드 갯수의 범위는 <code class="language-text">[0, 50]</code>입니다.</li>
+<li>노드의 value의 범위는 <code class="language-text">-100 &lt;= Node.value &lt;= 100</code>입니다.</li>
+<li><code class="language-text">list1</code>과 <code class="language-text">list2</code>는 모두 감소하지 않는 순서(오름차순)로 정렬됩니다.</li>
+</ul>
+<h2>접근</h2>
+<h3>예시를 보고 조건 파악하기</h3>
+<ol>
+<li><code class="language-text">예시 2</code>를 통해 두 리스트가 비어 있으면 빈 리스트가 반환되어야 한다는 것을 알 수 있습니다.</li>
+<li><code class="language-text">예시 3</code>을 통해 둘 중 한 개의 리스트가 비어 있으면 값이 존재하는 리스트가 되어야 한다는 것을 알 수 있습니다.</li>
+<li><code class="language-text">예시 1</code>과 <code class="language-text">제약사항</code>을 통해 두 리스트가 병합될 때 어떤 조건으로 병합되어야 하는지를 알 수 있습니다.</li>
+</ol>
+<h3>풀이</h3>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token parameter">list1<span class="token punctuation">,</span> list2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>list1<span class="token punctuation">)</span> <span class="token keyword">return</span> list2<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>list2<span class="token punctuation">)</span> <span class="token keyword">return</span> list1<span class="token punctuation">;</span>
+  <span class="token comment">// 둘 중 하나의 리스트가 빈 값인 경우 다른 리스트를 반환하도록 합니다.</span>
+  <span class="token comment">//not(!) 연산자를 이용해 빈 값인 리스트에 대한 조건을 설정했습니다.</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>위 조건을 만족하지 않는 경우 리스트의 값들을 비교하여 하나의 새로운 리스트가 결과로 반환되어야 하므로 각 리스트의 값에 대한 변수(firstValue, secondValue)와 결과로 반환될 새로운 리스트에 대한 변수(resultNode)를 선언한 뒤, 값을 서로 비교하여 상대적으로 큰 경우와 그렇지 않은 경우에 대한 조건을 설정했습니다.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token parameter">list1<span class="token punctuation">,</span> list2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>list1<span class="token punctuation">)</span> <span class="token keyword">return</span> list2<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>list2<span class="token punctuation">)</span> <span class="token keyword">return</span> list1<span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> firstValue <span class="token operator">=</span> list1<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> secondValue <span class="token operator">=</span> list2<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> resultNode<span class="token punctuation">;</span>
+
+  <span class="token comment">// 예시 1의 output을 통해 리스트의 값들은 오름차순으로 정렬되는 것을 알 수 있습니다.</span>
+  <span class="token comment">// 따라서 firtstValue가 secondValue보다 작을 때라는 조건을 설정했습니다.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>firstValue <span class="token operator">&lt;</span> secondValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>설정한 조건을 만족할 때 resultNode에 새로운 노드로 추가되도록 합니다. 그리고 resultNode에 추가된 노드의 다음 노드는 재귀를 이용하여 list1의 다음 노드와 list2의 현재 노드를 비교하도록 합니다. 만약 이 상황에서 설정한 조건을 만족하지 않는다면 secondNode가 resultNode에 새로운 노드로 추가되도록 하고, 그 다음 노드로는 반대로 list2의 다음 노드와 list1의 현재 노드를 재귀를 이용하여 비교하도록 합니다.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token parameter">list1<span class="token punctuation">,</span> list2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>list1<span class="token punctuation">)</span> <span class="token keyword">return</span> list2<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>list2<span class="token punctuation">)</span> <span class="token keyword">return</span> list1<span class="token punctuation">;</span>
+
+  <span class="token keyword">let</span> firstValue <span class="token operator">=</span> list1<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> secondValue <span class="token operator">=</span> list2<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> resultNode<span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>firstValue <span class="token operator">&lt;</span> secondValue<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    resultNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>firstValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    resultNode<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>list1<span class="token punctuation">.</span>next<span class="token punctuation">,</span> list2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    resultNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span>secondValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    resultNode<span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>list1<span class="token punctuation">,</span> list2<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> resultNode<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<blockquote>
+<p>출처: <a href="https://leetcode.com/problems/merge-two-sorted-lists/" target="_blank" rel="nofollow">21. Merge Two Sorted Lists (LeetCode)</a></p>
+</blockquote></article><style data-emotion="css hx9xpc">@media (max-width: 768px){.css-hx9xpc{padding:0 20px;}}</style><div class="css-hx9xpc e1gqsjds0"></div><style data-emotion="css pkaosw">.css-pkaosw{place-items:center;margin-top:auto;padding:44px 0;font-size:14px;text-align:center;line-height:1.45;color:rgba(34, 34, 34, 0.4);}</style><footer class="css-pkaosw e1oae0v80">Powered By<a href="https://www.gatsbyjs.com/" target="_blank" style="padding-left:4px;color:#3680ff">Gatsby</a><br/>© younseop lee, All rights reserved</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/merge-two-sorted-list/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-2f3f7291f8627339ed12.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-b551be95fbfe2d39dd5b.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-099c3156eb5036cdf0bf.js\"],\"component---src-pages-info-tsx\":[\"/component---src-pages-info-tsx-1f45e730dc56bbd6e8b1.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-4229f3d1a6800b618645.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="a08db99303a8586d9a92";</script><script src="/webpack-runtime-7729945e8c20225f5827.js" async></script><script src="/framework-a4e155cd0476dc1ca208.js" async></script><script src="/app-2f3f7291f8627339ed12.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
